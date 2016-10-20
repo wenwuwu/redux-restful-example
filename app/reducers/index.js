@@ -6,6 +6,8 @@ import {
 } from '../actions'
 
 function cards (state = [], action) {
+    let idx;
+
     switch (action.type) {
         case CREATE_CARD:
             return [
@@ -17,7 +19,7 @@ function cards (state = [], action) {
             ]
 
         case UPDATE_CARD:
-            const idx = _.findIndex(state, {id: action.id})
+            idx = _.findIndex(state, {id: action.id})
             const card = {
                 id: action.id,
                 name: action.name
@@ -29,7 +31,7 @@ function cards (state = [], action) {
             ]
 
         case DELETE_CARD:
-            const idx = _.findIndex(state, {id: action.id})
+            idx = _.findIndex(state, {id: action.id})
             return [
                 ...state.slice(0, idx),
                 ...state.slice(idx + 1)

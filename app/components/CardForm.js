@@ -2,7 +2,7 @@
 import React from 'react'
 
 const CardForm = ({id, name, createCard, updateCard}) => {
-    let input;
+    let input
     const pathView = `/cards/${id}`
     const pathList = '/cards'
 

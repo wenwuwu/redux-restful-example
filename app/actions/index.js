@@ -23,7 +23,7 @@ export function updateCard (id, name) {
 
 export function deleteCard (id) {
   return {
-    type: DELETE_CARD
+    type: DELETE_CARD,
     id
   }
 }

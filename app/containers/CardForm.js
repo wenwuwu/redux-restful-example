@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import CardForm from '../components/CardForm'
 import * as ActionCreators from '../actions'
+import _ from 'underscore'
 
 function mapStateToProps (state, ownProps) {
     const card = _.find(state.cards, {id: ownProps.cardId})
