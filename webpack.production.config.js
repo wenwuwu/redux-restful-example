@@ -54,10 +54,7 @@ module.exports = {
       }
     }),
     new CopyWebpackPlugin([
-      { from: './app/index.html' },
-      // { from: './app/main.scss' },
-      { from: './app/assets/', to: 'assets' },
-      { from: './app/vendor/', to: 'vendor' }
+      { from: './app/index.html' }
     ])
   ]
 };

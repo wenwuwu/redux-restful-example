@@ -30,13 +30,7 @@ app.get('/index.html', function (req, res){
 
 const cacheOpt = {maxAge: '1d'};
 
-app.get('/wenwu.pdf', function (req, res) {
-    const opt = isPro ? cacheOpt : {};
-    res.sendFile(path.join(__dirname, 'build/assets/pdf/WenwuWu.pdf'), opt);
-})
-
 if (isPro)  {
-    app.use('/vendor', express.static(__dirname + '/build/vendor', {maxAge: '1y'} ));
     app.use(express.static(__dirname + '/build', cacheOpt));
 }
 else {
