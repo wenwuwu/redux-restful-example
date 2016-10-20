@@ -6,7 +6,7 @@ import {
 } from '../actions'
 
 function cards (state = [], action) {
-    let idx;
+    let idx
 
     switch (action.type) {
         case CREATE_CARD:
