@@ -28,13 +28,14 @@
     "babel-polyfill": "^6.3.14",
     "isomorphic-fetch": "^2.1.1",
     "react": "15.x",
-    "react-dom": "15.x",
     "react-bootstrap": "0.30.3",
-    "react-router": "2.x",
+    "react-dom": "15.x",
     "react-redux": "^4.2.1",
+    "react-router": "2.x",
     "redux": "^3.2.1",
     "redux-logger": "^2.4.0",
-    "redux-thunk": "^1.0.3"
+    "redux-thunk": "^1.0.3",
+    "underscore": "1.8.3"
   },
   "devDependencies": {
     "babel-core": "6.x",
