@@ -21,10 +21,7 @@ function serveIndexPage (res) {
 };
 
 
-app.get('/', function (req, res){
-    serveIndexPage(res);
-})
-app.get('/index.html', function (req, res){
+app.get('/cards', function (req, res) {
     serveIndexPage(res);
 })
 
