@@ -6,6 +6,7 @@ import BackToCardList from '../components/BackToCardList'
 import _ from 'underscore'
 import { bindActionCreators } from 'redux'
 import * as ActionCreators from '../actions'
+import { Link } from 'react-router'
 
 const CardView = ({id, name, deleteCard}) => (
     <div id="view-card-wrapper">
