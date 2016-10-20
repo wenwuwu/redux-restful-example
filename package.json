@@ -8,6 +8,7 @@
     "validate": "npm ls",
     "build": "webpack",
     "start": "webpack-dev-server --devtool eval --progress --hot",
+    "dev": "NODE_ENV=development webpack -p --config webpack.production.config.js",
     "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js",
     "postinstall": "npm run deploy"
   },
