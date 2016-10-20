@@ -12,7 +12,7 @@ const CardForm = ({id, name, createCard, updateCard}) => {
     }
 
     return (
-        <div class="section">
+        <div className="section">
             <form onSubmit={e => {
                 e.preventDefault()
                 const val = input.value
@@ -29,11 +29,11 @@ const CardForm = ({id, name, createCard, updateCard}) => {
                 }
                 input.value = ''
             }}>
-                <span class="name">Card Name: </span>
+                <span className="name">Card Name: </span>
                 <input onChange={handleChange} ref={r => input = r} value={name ? name : ''} />
 
-                <button class="btn" type="submit"> OK </button>
-                <Link class="btn" to={id ? pathView : pathList}> Cancel </Link>
+                <button className="btn" type="submit"> OK </button>
+                <Link className="btn" to={id ? pathView : pathList}> Cancel </Link>
             </form>
         </div>
     )
