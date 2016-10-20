@@ -12,13 +12,19 @@ import CardEdit from './components/CardEdit'
 
 const store = configureStore()
 
+const Index = ({children}) => (
+    <div> {children} </div>
+)
+
 render(
     <Provider store={store}>
         <Router history={browserHistory}>
-            <Route path="/cards" component={Cards} />
-            <Route path="/cards/(:cardId)" component={CardView} />
-            <Route path="/cards/new" component={CardNew} />
-            <Route path="/cards/(:cardId)/edit" component={CardEdit} />
+            <Route path="/" component={Index} />
+                <Route path="cards" component={Cards} />
+                <Route path="cards/(:cardId)" component={CardView} />
+                <Route path="cards/new" component={CardNew} />
+                <Route path="cards/(:cardId)/edit" component={CardEdit} />
+            </Route>
         </Router>
     </Provider>,
     document.getElementById('everything')
