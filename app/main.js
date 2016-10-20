@@ -21,8 +21,8 @@ render(
         <Router history={browserHistory}>
             <Route path="/" component={Index} >
                 <Route path="cards" component={Cards} />
-                <Route path="cards/(:cardId)" component={CardView} />
                 <Route path="cards/new" component={CardNew} />
+                <Route path="cards/(:cardId)" component={CardView} />
                 <Route path="cards/(:cardId)/edit" component={CardEdit} />
             </Route>
         </Router>
