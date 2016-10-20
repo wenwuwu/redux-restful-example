@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'react-router'
 
 const BackLink = ({src, txt}) => (
-    <div class="section">
+    <div className="section">
         <Link to={src}>txt</Link>
     </div>
 )

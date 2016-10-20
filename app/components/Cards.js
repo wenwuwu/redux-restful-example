@@ -5,11 +5,11 @@ import Card from './Card'
 
 const Cards = ({cards}) => (
     <div id="cards-wrapper">
-        <div class="section">
+        <div className="section">
             <Link to="/cards/new">New Card</Link>
         </div>
 
-        <div class="section">
+        <div className="section">
             {
                 cards.map(card => (
                     <Card 

@@ -7,6 +7,10 @@ const CardForm = ({id, name, createCard, updateCard}) => {
     const pathView = `/cards/${id}`
     const pathList = '/cards'
 
+    function handleChange (e) {
+        input.value = e.target.value
+    }
+
     return (
         <div class="section">
             <form onSubmit={e => {
@@ -26,7 +30,7 @@ const CardForm = ({id, name, createCard, updateCard}) => {
                 input.value = ''
             }}>
                 <span class="name">Card Name: </span>
-                <input ref={r => input = r} value={name ? name : ''} />
+                <input onChange={handleChange} ref={r => input = r} value={name ? name : ''} />
 
                 <button class="btn" type="submit"> OK </button>
                 <Link class="btn" to={id ? pathView : pathList}> Cancel </Link>

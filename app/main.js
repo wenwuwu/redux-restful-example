@@ -19,7 +19,7 @@ const Index = ({children}) => (
 render(
     <Provider store={store}>
         <Router history={browserHistory}>
-            <Route path="/" component={Index} />
+            <Route path="/" component={Index} >
                 <Route path="cards" component={Cards} />
                 <Route path="cards/(:cardId)" component={CardView} />
                 <Route path="cards/new" component={CardNew} />

@@ -4,5 +4,7 @@ import { connect } from 'react-redux'
 import Cards from '../components/Cards'
 
 export default connect(
-    state => ({cards: state.cards})
+    state => {
+        return {cards: state.cards}
+    }
 )(Cards)

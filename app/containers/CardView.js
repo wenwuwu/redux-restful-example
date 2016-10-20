@@ -13,9 +13,9 @@ const CardView = ({id, name, deleteCard}) => (
         <BackToCardList />
         <Card id={id} name={name} />
 
-        <Link class="btn" to={`/cards/${id}/edit`}> Edit </Link>
+        <Link className="btn" to={`/cards/${id}/edit`}> Edit </Link>
         <button
-            class="btn" 
+            className="btn" 
             onClick={e => {
                 deleteCard(id)
                 location.pathname = "/cards"
