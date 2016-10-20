@@ -1,10 +1,13 @@
 
 import React from 'react'
+import { Link } from 'react-router'
 
-const Card = ({txt}) => (
+const Card = ({id, name}) => (
     <div class="row">
-        <div class="card">
-            {txt}
-        </div>
+        <Link to={`/cards/${id}`} >
+            <div class="card">
+                {name}
+            </div>
+        </Link>
     </div>
 )

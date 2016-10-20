@@ -1,12 +1,12 @@
 
 import React from 'react'
-import Back from './Back'
-import CardForm from '../containers/CardForm'
+import BackToCardList from './BackToCardList'
+import CardFormWrapper from '../containers/CardForm'
 
 const CardNew = () => (
     <div id="new-card-wrapper">
-        <Back />
-        <CardForm isNew={true} />
+        <BackToCardList />
+        <CardFormWrapper />
     </div>
 )
 

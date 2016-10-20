@@ -8,7 +8,7 @@ import { Router, Route, browserHistory } from 'react-router'
 import Cards from './containers/Cards'
 import CardView from './containers/CardView'
 import CardNew from './components/CardNew'
-import CardEdit from './containers/CardEdit'
+import CardEdit from './components/CardEdit'
 
 const store = configureStore()
 

@@ -14,7 +14,7 @@ const Cards = ({cards}) => (
                 cards.map(card => (
                     <Card 
                         key={card.id}
-                        txt={card.name}
+                        {...card}
                     />
                 ))
             }

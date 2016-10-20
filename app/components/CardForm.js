@@ -1,8 +1,10 @@
 
 import React from 'react'
 
-const CardForm = ({isNew, cardId, createCard, updateCard}) => {
+const CardForm = ({id, name, createCard, updateCard}) => {
     let input;
+    const pathView = `/cards/${id}`
+    const pathList = '/cards'
 
     return (
         <div class="section">
@@ -12,14 +14,21 @@ const CardForm = ({isNew, cardId, createCard, updateCard}) => {
                 if (!val.trim()) {
                     return
                 }
-                isNew ? createCard(val) : updateCard(cardId, val)
+                if (id) {
+                    updateCard(id, val)
+                    location.pathname = pathView
+                }
+                else {
+                    createCard(val) 
+                    location.pathname = pathList
+                }
                 input.value = ''
             }}>
                 <span class="name">Card Name: </span>
-                <input ref={r => input = r} />
+                <input ref={r => input = r} value={name ? name : ''} />
 
                 <button class="btn" type="submit"> OK </button>
-                <Link class="btn" to={isNew ? '/cards' : `/cards/${cardId}` }> Cancel </Link>
+                <Link class="btn" to={id ? pathView : pathList}> Cancel </Link>
             </form>
         </div>
     )
