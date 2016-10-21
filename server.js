@@ -7,6 +7,10 @@ const app = express()
 const nodeEnv = process.env.NODE_ENV || 'development'
 const isPro = nodeEnv === 'production'
 
+if (!isPro) {
+    require('./webpackdev.server')(app)
+}
+
 app.use(compression({filter: shouldCompress}))
 
 function shouldCompress(req, res) {
