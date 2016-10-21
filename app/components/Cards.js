@@ -5,7 +5,7 @@ import Card from './Card'
 
 const Cards = ({cards}) => (
     <div id="cards-wrapper">
-        <div className="section">
+        <div className="section nav">
             <Link to="/cards/new">New Card</Link>
         </div>
 

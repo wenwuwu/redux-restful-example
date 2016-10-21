@@ -22,6 +22,8 @@ $btn-bg-color: #fff;
 
 $link-color: $primary-color;
 $link-highlight-color: $highlight-color;
+$nav-link-color: #1d81bb;
+$nav-link-highlight-color: #104766;
 
 
 .full-height {
@@ -114,6 +116,10 @@ html, body, #everything {
     margin-top: $row-margin;
     margin-bottom: $row-margin;
     @extend .flex-center;
+}
+
+.nav {
+    @include link ($nav-link-color, $nav-link-highlight-color, underline);
 }
 
 .card {
