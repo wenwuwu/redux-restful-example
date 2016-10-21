@@ -17,6 +17,11 @@ module.exports = {
   module: {
     loaders:[
         { 
+            test: /\.json$/, 
+            include: path.resolve(__dirname, 'app'), 
+            loader: 'json'
+        },
+        { 
             test: /\.scss$/, 
             include: path.resolve(__dirname, 'app'), 
             loader: 'style-loader!css-loader!sass-loader!postcss-loader' 
@@ -24,7 +29,8 @@ module.exports = {
         { 
             test: /\.js[x]?$/, 
             include: path.resolve(__dirname, 'app'), 
-            exclude: /node_modules/, loader: 'babel-loader' 
+            exclude: /node_modules/, 
+            loader: 'babel-loader' 
         }
     ]
   },
@@ -54,7 +60,8 @@ module.exports = {
       }
     }),
     new CopyWebpackPlugin([
-      { from: './app/index.html' }
+      { from: './app/index.html' },
+      // { from: './app/assets/', to: 'assets' }
     ])
   ]
 };
