@@ -1,15 +1,19 @@
 
 import React from 'react'
-import { Link } from 'react-router'
+import { Link, withRouter } from 'react-router'
 
 const CardForm = ({id, name, createCard, updateCard}) => {
     let input
+    let router = this.props.router
+
     const pathView = `/cards/${id}`
     const pathList = '/cards'
 
+    /*
     function handleChange (e) {
         input.value = e.target.value
     }
+    */
 
     return (
         <div className="section">
@@ -21,22 +25,25 @@ const CardForm = ({id, name, createCard, updateCard}) => {
                 }
                 if (id) {
                     updateCard(id, val)
-                    location.pathname = pathView
+                    router.push(pathView)
                 }
                 else {
                     createCard(val) 
-                    location.pathname = pathList
+                    router.push(pathList)
                 }
                 input.value = ''
             }}>
                 <span className="name">Card Name: </span>
-                <input onChange={handleChange} ref={r => input = r} value={name ? name : ''} />
+                { /* <input onChange={handleChange} ref={r => input = r} value={name ? name : ''} /> */ }
+                <input ref={r => input = r} />
 
-                <button className="btn" type="submit"> OK </button>
-                <Link className="btn" to={id ? pathView : pathList}> Cancel </Link>
+                <div className="row">
+                    <button className="btn" type="submit"> OK </button>
+                    <Link className="btn" to={id ? pathView : pathList}> Cancel </Link>
+                </div>
             </form>
         </div>
     )
 }
 
-export default CardForm
+export default withRouter(CardForm)

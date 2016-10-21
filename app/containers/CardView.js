@@ -6,7 +6,7 @@ import BackToCardList from '../components/BackToCardList'
 import _ from 'underscore'
 import { bindActionCreators } from 'redux'
 import * as ActionCreators from '../actions'
-import { Link } from 'react-router'
+import { Link, withRouter } from 'react-router'
 
 const CardView = ({id, name, deleteCard}) => (
     <div id="view-card-wrapper">
@@ -18,7 +18,7 @@ const CardView = ({id, name, deleteCard}) => (
             className="btn" 
             onClick={e => {
                 deleteCard(id)
-                location.pathname = "/cards"
+                this.props.router.push("/cards")
         }}> OK 
         </button>
     </div>
@@ -33,4 +33,4 @@ function mapStateToProps (state, ownProps) {
 export default connect(
     mapStateToProps,
     dispatch => bindActionCreators(ActionCreators, dispatch)
-)(CardView)
+)(withRouter(CardView))
