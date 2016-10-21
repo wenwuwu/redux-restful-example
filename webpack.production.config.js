@@ -18,7 +18,7 @@ module.exports = {
     loaders:[
         { 
             test: /\.json$/, 
-            include: path.resolve(__dirname, 'app'), 
+            include: __dirname,
             loader: 'json'
         },
         { 
