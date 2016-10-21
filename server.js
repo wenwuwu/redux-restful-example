@@ -17,14 +17,24 @@ if (!isPro) {
 
 app.use(compression({filter: shouldCompress}))
 
-function shouldCompress(req, res) {
+function shouldCompress (req, res) {
     if (   req.headers['x-no-compression']
         || (/\.(png|jpg|gif|pdf)$/.test(req.path)) ) {
         return false;
     }
     return compression.filter(req, res);
 };
+
+function buildInitialState () {
+    const state = fs.readFileSync('./data/cards.json', 'utf8');
+    if (!isPro) {
+        console.log('Reading file cards.json: ' + state);
+    }
+    const code = 'window.initialState = ' + state;
+    fs.writeFile('./build/initial-state.js', code, 'utf8');
+};
 function serveIndexPage (res) {
+    buildInitialState()
     res.sendFile(path.resolve(__dirname, 'build', 'index.html'))    // Make sure don't cache it.
 };
 
