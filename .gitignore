@@ -38,6 +38,7 @@ build.js*
 demo/build
 dist
 tmp
+data/cards.json
 
 # Dependency directories
 node_modules

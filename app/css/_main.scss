@@ -1,9 +1,10 @@
 
 $font-family: Helvetica, sans-serif;
 $font-size: 20px;
-$primary-color: #7e7e7e;
+$primary-color: #666;
 $primary-bg-color:  #fff;
 $text-align: center;
+$highlight-color: #111;
 
 $container-width: 800px;
 $container-bg-color: #eee;
@@ -11,15 +12,16 @@ $container-bg-color: #eee;
 $section-margin: 2rem;
 $row-margin: 2rem;
 
+$card-color: $primary-color;
 $card-border-color: $primary-color;
-$card-bg-color: #ccc;
+$card-bg-color: #dfdfdf;
 
-$btn-width: $container-width * 0.1;
+$btn-width: $container-width * 0.15;
 $btn-border-color: $primary-color;
 $btn-bg-color: #fff;
 
 $link-color: $primary-color;
-$link-highlight-color: #333;
+$link-highlight-color: $highlight-color;
 
 
 .full-height {
@@ -120,6 +122,8 @@ html, body, #everything {
     font-weight: 700;
     font-size: 3rem;
 
+    @include link ($card-color, $link-highlight-color, none);
+
     a {
         display: inline-block;
 
@@ -133,7 +137,7 @@ html, body, #everything {
 
 .btn {
     display: inline-block;
-    padding: 5px;
+    padding: 5px 8px;
     margin: 15px;
     @include border (1px, $btn-border-color);
     width: $btn-width;
@@ -148,4 +152,5 @@ html, body, #everything {
 
 input {
     padding-left: 5px;
+    margin-left: 15px;
 }

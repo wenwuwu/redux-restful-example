@@ -40,10 +40,10 @@ function serveIndexPage (res) {
     res.sendFile(path.resolve(__dirname, 'build', 'index.html'))    // Make sure don't cache it.
 };
 
-// const jsonParser = bodyParser.json(); // for parsing application/json
-app.use(bodyParser.json()); // for parsing application/json
+const jsonParser = bodyParser.json(); // for parsing application/json
+// app.use(bodyParser.json()); // for parsing application/json
 
-app.post('/cards/state', function (req, res) {
+app.post('/cards/state', jsonParser, function (req, res) {
     fs.writeFile(pathData, JSON.stringify(req.body), 'utf8');
     res.json({status: 200, statusText: 'success'});
 })
