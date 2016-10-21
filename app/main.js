@@ -9,8 +9,11 @@ import Cards from './containers/Cards'
 import CardView from './containers/CardView'
 import CardNew from './components/CardNew'
 import CardEdit from './components/CardEdit'
+import preState from './assets/data/cards.json'
+import { save } from './api'
 
-const store = configureStore()
+const store = configureStore(preState)
+store.subscribe(() => save(store.getState()))
 
 const Index = ({children}) => (
     <div> {children} </div>

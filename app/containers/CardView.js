@@ -19,7 +19,7 @@ const CardView = ({id, name, deleteCard, router}) => (
             onClick={e => {
                 deleteCard(id)
                 router.push("/cards")
-        }}> OK 
+        }}> Delete
         </button>
     </div>
 )

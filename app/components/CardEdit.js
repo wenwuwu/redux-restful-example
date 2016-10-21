@@ -5,8 +5,8 @@ import CardFormWrapper from '../containers/CardForm'
 
 const CardEdit = ({params}) => (
     <div id="edit-card-wrapper">
-        <BackToCard cardId={params.id} />
-        <CardFormWrapper cardId={params.id} />
+        <BackToCard cardId={params.cardId} />
+        <CardFormWrapper cardId={params.cardId} />
     </div>
 )
 

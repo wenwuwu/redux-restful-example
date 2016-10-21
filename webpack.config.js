@@ -27,6 +27,11 @@ module.exports = {
   module: {
     loaders:[
         { 
+            test: /\.json$/, 
+            include: path.resolve(__dirname, 'app'), 
+            loader: 'json'
+        },
+        { 
             test: /\.scss$/, 
             include: path.resolve(__dirname, 'app'), 
             loader: 'style-loader!css-loader!sass-loader!postcss-loader' 

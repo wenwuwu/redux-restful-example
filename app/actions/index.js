@@ -8,7 +8,7 @@ export const DELETE_CARD = 'DELETE_CARD'
 export function createCard (name) {
   return {
     type: CREATE_CARD,
-    id: Date.now(),
+    id: name + Date.now(),
     name
   }
 }

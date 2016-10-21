@@ -27,6 +27,7 @@
   "homepage": "https://github.com/wenwuwu/redux-restful-example#readme",
   "dependencies": {
     "babel-polyfill": "^6.3.14",
+    "body-parser": "1.15.2",
     "isomorphic-fetch": "^2.1.1",
     "react": "15.x",
     "react-bootstrap": "0.30.3",
@@ -52,6 +53,7 @@
     "eslint-plugin-react": "6.4.1",
     "expect": "^1.6.0",
     "express": "4.14.0",
+    "json-loader": "0.5.4",
     "node-sass": "3.10.1",
     "open-browser-webpack-plugin": "0.0.2",
     "postcss-loader": "1.0.0",

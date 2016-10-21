@@ -1,11 +1,119 @@
 
+$font-family: Helvetica, sans-serif;
+$font-size: 20px;
+$primary-color: #333;
+$primary-bg-color:  #fff;
+$text-align: center;
+
+$container-width: 800px;
+$container-bg-color: #eee;
+
+$section-margin: 2rem;
+$row-margin: 2rem;
+
+$card-border-color: #666;
+$card-bg-color: #ccc;
+$card-link-highlight-color: #445963;
+
+$btn-width: $container-width * 0.1;
+$btn-border-color: #eee;
+$btn-bg-color: #fff;
+
+$link-color: #8bc34a;
+$link-highlight-color: #445963; 
+
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin border ($w, $color) {
+    border-width: $w;
+    border-style: solid;
+    border-color: $color;
+}
+@mixin link ($color, $highlight-color, $style) {
+    @if ($style == null) {
+        $style: 'underline';
+    }
+
+    a {
+        color: $color;
+        text-decoration: $style;
+    }
+    a:visited {
+        color: $color;
+        text-decoration: $style;
+    }
+    a:focus {
+        color: $highlight-color;
+        text-decoration: $style;
+    }
+    a:hover {
+        color: $highlight-color;
+        text-decoration: $style;
+    }
+}
+
+html {
+    font-size: $font-size;
+}
+
 body {
-    text-align: center;
+    font-family: $font-family;
+    color: $primary-color;
+    text-align: $text-align;
+    background: $primary-bg-color;
+    font-size: $font-size;
+}
+
+@include link ($link-color, $link-highlight-color, 'none');
+
+.everything {
+    width: $container-width;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background: $container-bg-color;
 }
 
 .section {
-    margin: 2rem auto;
+    margin: $section-margin auto;
 }
 
 .row {
+    margin-top: $row-margin;
+    margin-bottom: $row-margin;
+    @extend .flex-center;
+}
+
+.card {
+    @include border (1px, $card-border-color);
+    /*
+    @include link ($primary-color, $card-link-highlight-color, 'none');
+    */
+    background: $card-bg-color;
+    font-weight: 700;
+    font-size: 3rem;
+
+    a {
+        display: inline-block;
+
+        .inner {
+            @extend .flex-center;
+            width: $container-width * 0.5;
+            height: $container-width * 0.2;
+        }
+    }
+}
+
+.btn {
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+    @include border (1px, $btn-border-color);
+    width: $btn-width;
+    background: $btn-bg-color;
+    font-size: 1rem;
 }

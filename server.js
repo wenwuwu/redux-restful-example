@@ -2,6 +2,7 @@
 const express = require('express')
 const compression = require('compression')
 const path = require('path')
+const fs = require('fs')
 const port = process.env.PORT || 3000
 const app = express()
 const nodeEnv = process.env.NODE_ENV || 'development'
@@ -24,6 +25,12 @@ function serveIndexPage (res) {
     res.sendFile(path.resolve(__dirname, 'build', 'index.html'))    // Make sure don't cache it.
 };
 
+app.use(bodyParser.json()); // for parsing application/json
+
+app.post('/cards/state', function (req, res) {
+    fs.writeFile('app/assets/data/cards.json', req.body, 'utf8');
+    res.json({status: 200, statusText: 'success'});
+})
 
 app.get('/cards', function (req, res) {
     serveIndexPage(res);
@@ -41,6 +48,7 @@ else {
 app.get('*', function (req, res){
     serveIndexPage(res);
 })
+
 app.use(function(err, req, res, next) {
     console.error(err.stack);
     res.status(500);
