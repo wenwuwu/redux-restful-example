@@ -25,10 +25,12 @@ function shouldCompress (req, res) {
     return compression.filter(req, res);
 };
 
+const pathData = './data/cards.json';
+
 function buildInitialState () {
-    const state = fs.readFileSync('./data/cards.json', 'utf8');
+    const state = fs.readFileSync(pathData, 'utf8');
     if (!isPro) {
-        console.log('Reading file cards.json: ' + state);
+        console.log('Read file cards.json: ' + state);
     }
     const code = 'window.initialState = ' + state;
     fs.writeFile('./build/initial-state.js', code, 'utf8');
@@ -42,7 +44,7 @@ function serveIndexPage (res) {
 app.use(bodyParser.json()); // for parsing application/json
 
 app.post('/cards/state', function (req, res) {
-    fs.writeFile('./data/cards.json', JSON.stringify(req.body), 'utf8');
+    fs.writeFile(pathData, JSON.stringify(req.body), 'utf8');
     res.json({status: 200, statusText: 'success'});
 })
 

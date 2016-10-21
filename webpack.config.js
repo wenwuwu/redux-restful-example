@@ -26,11 +26,13 @@ module.exports = {
   devtool: "source-map",
   module: {
     loaders:[
+        /*
         { 
             test: /\.json$/, 
             include: path.resolve(__dirname, 'app'), 
             loader: 'json'
         },
+        */
         { 
             test: /\.scss$/, 
             include: path.resolve(__dirname, 'app'), 

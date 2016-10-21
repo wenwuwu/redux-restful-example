@@ -16,11 +16,13 @@ module.exports = {
   },
   module: {
     loaders:[
+        /*
         { 
             test: /\.json$/, 
             include: __dirname,
             loader: 'json'
         },
+        */
         { 
             test: /\.scss$/, 
             include: path.resolve(__dirname, 'app'), 
