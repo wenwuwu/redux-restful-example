@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 
 const BackToCard = ({cardId}) => (
     <div className="section">
-        <Link to={`/cards/${cardId}`}>{`Back to Card ${cardId}`}</Link>
+        <Link to={`/cards/${cardId}`}>{`Back to Card`}</Link>
     </div>
 )
 

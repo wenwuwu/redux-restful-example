@@ -1,7 +1,7 @@
 
 $font-family: Helvetica, sans-serif;
 $font-size: 20px;
-$primary-color: #333;
+$primary-color: #7e7e7e;
 $primary-bg-color:  #fff;
 $text-align: center;
 
@@ -11,22 +11,35 @@ $container-bg-color: #eee;
 $section-margin: 2rem;
 $row-margin: 2rem;
 
-$card-border-color: #666;
+$card-border-color: $primary-color;
 $card-bg-color: #ccc;
-$card-link-highlight-color: #445963;
 
 $btn-width: $container-width * 0.1;
-$btn-border-color: #eee;
+$btn-border-color: $primary-color;
 $btn-bg-color: #fff;
 
-$link-color: #8bc34a;
-$link-highlight-color: #445963; 
+$link-color: $primary-color;
+$link-highlight-color: #333;
 
 
+.full-height {
+    min-height: 100%;
+    height: 100%;
+}
+.highlight-color {
+    color: $link-highlight-color;
+}
+.radius {
+    border-radius: 10px;
+}
 .flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.auto-margin {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @mixin border ($w, $color) {
@@ -35,13 +48,10 @@ $link-highlight-color: #445963;
     border-color: $color;
 }
 @mixin link ($color, $highlight-color, $style) {
-    @if ($style == null) {
-        $style: 'underline';
-    }
-
     a {
         color: $color;
         text-decoration: $style;
+        @extend .basic-trans;
     }
     a:visited {
         color: $color;
@@ -57,6 +67,16 @@ $link-highlight-color: #445963;
     }
 }
 
+.basic-trans {
+    transition: all .2s ease;
+}
+
+html, html a {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004); 
+}
+
 html {
     font-size: $font-size;
 }
@@ -69,17 +89,23 @@ body {
     font-size: $font-size;
 }
 
-@include link ($link-color, $link-highlight-color, 'none');
+html, body, #everything {
+    @extend .full-height;
+}
 
-.everything {
+@include link ($link-color, $link-highlight-color, none);
+
+#everything {
     width: $container-width;
     overflow-x: hidden;
-    overflow-y: scroll;
     background: $container-bg-color;
+    @extend .auto-margin;
 }
 
 .section {
-    margin: $section-margin auto;
+    margin-top: $section-margin;
+    margin-bottom: $section-margin;
+    @extend .auto-margin;
 }
 
 .row {
@@ -90,9 +116,6 @@ body {
 
 .card {
     @include border (1px, $card-border-color);
-    /*
-    @include link ($primary-color, $card-link-highlight-color, 'none');
-    */
     background: $card-bg-color;
     font-weight: 700;
     font-size: 3rem;
@@ -111,9 +134,18 @@ body {
 .btn {
     display: inline-block;
     padding: 5px;
-    margin: 5px;
+    margin: 15px;
     @include border (1px, $btn-border-color);
     width: $btn-width;
     background: $btn-bg-color;
     font-size: 1rem;
+    @extend .radius;
+    @extend .basic-trans;
+}
+.btn:hover {
+    @extend .highlight-color;
+}
+
+input {
+    padding-left: 5px;
 }

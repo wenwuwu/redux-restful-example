@@ -34,7 +34,7 @@ const CardForm = ({id, name, createCard, updateCard, router}) => {
             }}>
                 <span className="name">Card Name: </span>
                 { /* <input onChange={handleChange} ref={r => input = r} value={name ? name : ''} /> */ }
-                <input ref={r => input = r} />
+                <input ref={r => input = r} autoFocus />
 
                 <div className="row">
                     <button className="btn" type="submit"> OK </button>
