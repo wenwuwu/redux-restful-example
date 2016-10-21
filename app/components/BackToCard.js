@@ -1,11 +1,10 @@
 
 import React from 'react'
 import { Link } from 'react-router'
+import BackLink from './BackLink'
 
 const BackToCard = ({cardId}) => (
-    <div className="section">
-        <Link to={`/cards/${cardId}`}>{`Back to Card`}</Link>
-    </div>
+    <BackLink src={`/cards/${cardId}`} txt='Back to Card' />
 )
 
 export default BackToCard
