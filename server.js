@@ -3,14 +3,17 @@ const express = require('express')
 const compression = require('compression')
 const path = require('path')
 const fs = require('fs')
+const bodyParser = require('body-parser')
 const port = process.env.PORT || 3000
 const app = express()
 const nodeEnv = process.env.NODE_ENV || 'development'
 const isPro = nodeEnv === 'production'
 
+/*
 if (!isPro) {
     require('./webpackdev.server')(app)
 }
+*/
 
 app.use(compression({filter: shouldCompress}))
 
@@ -25,10 +28,11 @@ function serveIndexPage (res) {
     res.sendFile(path.resolve(__dirname, 'build', 'index.html'))    // Make sure don't cache it.
 };
 
+// const jsonParser = bodyParser.json(); // for parsing application/json
 app.use(bodyParser.json()); // for parsing application/json
 
 app.post('/cards/state', function (req, res) {
-    fs.writeFile('./data/cards.json', req.body, 'utf8');
+    fs.writeFile('./data/cards.json', JSON.stringify(req.body), 'utf8');
     res.json({status: 200, statusText: 'success'});
 })
 
