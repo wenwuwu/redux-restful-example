@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux'
 import * as ActionCreators from '../actions'
 import { Link, withRouter } from 'react-router'
 
-const CardView = ({id, name, deleteCard}) => (
+const CardView = ({id, name, deleteCard, router}) => (
     <div id="view-card-wrapper">
         <BackToCardList />
         <Card id={id} name={name} />
@@ -18,7 +18,7 @@ const CardView = ({id, name, deleteCard}) => (
             className="btn" 
             onClick={e => {
                 deleteCard(id)
-                this.props.router.push("/cards")
+                router.push("/cards")
         }}> OK 
         </button>
     </div>

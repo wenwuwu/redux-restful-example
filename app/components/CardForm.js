@@ -2,9 +2,8 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router'
 
-const CardForm = ({id, name, createCard, updateCard}) => {
+const CardForm = ({id, name, createCard, updateCard, router}) => {
     let input
-    let router = this.props.router
 
     const pathView = `/cards/${id}`
     const pathList = '/cards'
