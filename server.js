@@ -28,7 +28,7 @@ function serveIndexPage (res) {
 app.use(bodyParser.json()); // for parsing application/json
 
 app.post('/cards/state', function (req, res) {
-    fs.writeFile('app/assets/data/cards.json', req.body, 'utf8');
+    fs.writeFile('./data/cards.json', req.body, 'utf8');
     res.json({status: 200, statusText: 'success'});
 })
 
