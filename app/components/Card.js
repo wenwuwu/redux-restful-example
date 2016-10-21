@@ -11,3 +11,5 @@ const Card = ({id, name}) => (
         </Link>
     </div>
 )
+
+export default Card
