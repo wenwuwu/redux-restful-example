@@ -8,12 +8,6 @@ const CardForm = ({id, name, createCard, updateCard, router}) => {
     const pathView = `/cards/${id}`
     const pathList = '/cards'
 
-    /*
-    function handleChange (e) {
-        input.value = e.target.value
-    }
-    */
-
     return (
         <div className="section">
             <form onSubmit={e => {
@@ -33,8 +27,7 @@ const CardForm = ({id, name, createCard, updateCard, router}) => {
                 input.value = ''
             }}>
                 <span className="name">Card Name: </span>
-                { /* <input onChange={handleChange} ref={r => input = r} value={name ? name : ''} /> */ }
-                <input ref={r => input = r} autoFocus />
+                <input ref={r => input = r} defaultValue={name ? name : ''} autoFocus />
 
                 <div className="row">
                     <button className="btn" type="submit"> OK </button>
