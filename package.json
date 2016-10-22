@@ -27,7 +27,10 @@
   "dependencies": {
     "babel-polyfill": "^6.3.14",
     "body-parser": "1.15.2",
+    "compression": "1.6.2",
+    "express": "4.14.0",
     "isomorphic-fetch": "^2.1.1",
+    "normalize-css": "2.3.1",
     "react": "15.x",
     "react-bootstrap": "0.30.3",
     "react-dom": "15.x",
@@ -36,9 +39,7 @@
     "redux": "^3.2.1",
     "redux-logger": "^2.4.0",
     "redux-thunk": "^1.0.3",
-    "underscore": "1.8.3",
-    "express": "4.14.0",
-    "compression": "1.6.2"
+    "underscore": "1.8.3"
   },
   "devDependencies": {
     "babel-core": "6.x",

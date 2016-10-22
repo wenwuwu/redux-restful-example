@@ -1,4 +1,6 @@
+import 'normalize-css'
 import './main.scss'
+
 import 'babel-polyfill'
 import React from 'react'
 import { render } from 'react-dom'

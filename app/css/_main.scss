@@ -93,7 +93,7 @@ body {
     font-size: $font-size;
 }
 
-html, body, #everything {
+html, body {
     @extend .full-height;
 }
 
@@ -101,62 +101,63 @@ html, body, #everything {
 
 #everything {
     width: $container-width;
-    overflow-x: hidden;
     background: $container-bg-color;
     @extend .auto-margin;
-}
-
-.section {
-    margin-top: $section-margin;
-    margin-bottom: $section-margin;
-    @extend .auto-margin;
-}
-
-.row {
-    margin-top: $row-margin;
-    margin-bottom: $row-margin;
-    @extend .flex-center;
+    padding: 2rem;
 }
 
 .nav {
     @include link ($nav-link-color, $nav-link-highlight-color, underline);
 }
 
-.card {
-    @include border (1px, $card-border-color);
-    background: $card-bg-color;
-    font-weight: 700;
-    font-size: 3rem;
+.section {
+    margin-top: $section-margin;
+    margin-bottom: $section-margin;
+    @extend .auto-margin;
 
-    @include link ($card-color, $link-highlight-color, none);
+    .row {
+        margin-top: $row-margin;
+        margin-bottom: $row-margin;
+        @extend .flex-center;
 
-    a {
-        display: inline-block;
+        .card {
+            @include border (1px, $card-border-color);
+            background: $card-bg-color;
+            font-weight: 700;
+            font-size: 3rem;
 
-        .inner {
-            @extend .flex-center;
-            width: $container-width * 0.5;
-            height: $container-width * 0.2;
+            @include link ($card-color, $link-highlight-color, none);
+
+            a {
+                display: inline-block;
+
+                .inner {
+                    @extend .flex-center;
+                    width: $container-width * 0.5;
+                    height: $container-width * 0.2;
+                }
+            }
+        }
+
+        input {
+            padding-left: 5px;
+            margin-left: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 5px 8px;
+            margin: 15px;
+            @include border (1px, $btn-border-color);
+            width: $btn-width;
+            background: $btn-bg-color;
+            font-size: 1rem;
+            @extend .radius;
+            @extend .basic-trans;
+        }
+
+        .btn:hover {
+            @extend .highlight-color;
         }
     }
-}
-
-.btn {
-    display: inline-block;
-    padding: 5px 8px;
-    margin: 15px;
-    @include border (1px, $btn-border-color);
-    width: $btn-width;
-    background: $btn-bg-color;
-    font-size: 1rem;
-    @extend .radius;
-    @extend .basic-trans;
-}
-.btn:hover {
-    @extend .highlight-color;
-}
-
-input {
-    padding-left: 5px;
-    margin-left: 15px;
 }

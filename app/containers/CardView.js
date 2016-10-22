@@ -11,16 +11,21 @@ import { Link, withRouter } from 'react-router'
 const CardView = ({id, name, deleteCard, router}) => (
     <div id="view-card-wrapper">
         <BackToCardList />
-        <Card id={id} name={name} />
 
-        <Link className="btn" to={`/cards/${id}/edit`}> Edit </Link>
-        <button
-            className="btn" 
-            onClick={e => {
-                deleteCard(id)
-                router.push("/cards")
-        }}> Delete
-        </button>
+        <div className="section">
+            <Card id={id} name={name} />
+
+            <div className="row btns">
+                <Link className="btn" to={`/cards/${id}/edit`}> Edit </Link>
+                <button
+                    className="btn" 
+                    onClick={e => {
+                        deleteCard(id)
+                        router.push("/cards")
+                }}> Delete
+                </button>
+            </div>
+        </div>
     </div>
 )
 

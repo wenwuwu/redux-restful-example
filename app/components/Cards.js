@@ -1,15 +1,13 @@
 
 import React from 'react'
-import { Link } from 'react-router'
 import Card from './Card'
+import NavLink from './NavLink'
 
 const Cards = ({cards}) => (
     <div id="cards-wrapper">
-        <div className="section nav">
-            <Link to="/cards/new">New Card</Link>
-        </div>
+        <NavLink to='/cards/new' txt='New Card' />
 
-        <div className="section">
+        <div className="section cards">
             {
                 cards.map(card => (
                     <Card 

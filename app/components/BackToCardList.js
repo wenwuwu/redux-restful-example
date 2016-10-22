@@ -1,10 +1,10 @@
 
 import React from 'react'
 import { Link } from 'react-router'
-import BackLink from './BackLink'
+import NavLink from './NavLink'
 
 const BackToCardList = () => (
-    <BackLink src='/cards' txt='Back to Card List' />
+    <NavLink to='/cards' txt='Back to Card List' />
 )
 
 export default BackToCardList
